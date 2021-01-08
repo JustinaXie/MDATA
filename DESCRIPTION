@@ -1,0 +1,15 @@
+Package: MDATA
+Title: Multi-trait for De novo mutation Association Test with Annotations
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Yuhan",
+           family = "Xie",
+           role = c("aut", "cre"),
+           email = "yuhan.xie@yale.edu",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: A multi-trait for De novo mutation association test with annotationsto identify risk genes for multiple traits simultaneously based on pleiotropy and functional annotation.
+License: `use_mit_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
