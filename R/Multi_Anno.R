@@ -51,8 +51,6 @@ Multi_Anno<-function(data,Anno1,Anno2,N_1,N_2,
   Q_1<-dim(X_1)[2]
   Q_2<-dim(X_2)[2]
 
-
-
   #indicator
   Z <- matrix(NA, P, 4)
 

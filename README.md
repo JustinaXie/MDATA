@@ -1,7 +1,7 @@
 ## M-DATA: Multi-trait for De novo mutation Association Test with Annotations
 *Yuhan Xie*
 
-To install the software for *M-DATA*, you need *devtools* package first:
+To install the software for *M-DATA*, you need package *devtools* first
 
 ```{R}
 if (!requireNamespace("devtools", quietly = TRUE))
@@ -9,6 +9,7 @@ if (!requireNamespace("devtools", quietly = TRUE))
 library(devtools)
 ```
 
+Then, you can install *M-DATA* 
 ```{R}
 install_github("JustinaXie/MDATA")
 ```

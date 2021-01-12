@@ -2,7 +2,7 @@
 % Please edit documentation in R/Get_Multi_Gene.R
 \name{Get_Multi_Gene}
 \alias{Get_Multi_Gene}
-\title{Get significant gene list from Multi_Trait Models}
+\title{Get significant gene list from multi-trait models}
 \usage{
 Get_Multi_Gene(output, threshold = 0.05)
 }
@@ -17,5 +17,5 @@ The significant gene list for two traits under FDR<threshold
 \item{Gene_trait2}{Significant gene list for trait 2}
 }
 \description{
-Get significant gene list from Multi_Trait Models
+Get significant gene list from multi-trait models
 }

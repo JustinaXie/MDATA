@@ -1,4 +1,4 @@
-#' Get significant gene list from Multi_Trait Models
+#' Get significant gene list from multi-trait models
 #'
 #' @param output A list object from the output of multi-trait models
 #' @param threshold Threshold for FDR. Default=0.05
