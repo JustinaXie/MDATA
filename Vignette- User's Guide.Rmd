@@ -14,7 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 load("./data/Multi_Toy_Data.rda")
 ```
 
-The toy data has 5 columns: Gene, mutability of a gene (mut_dn), de novo mutation counts for the first trait (dn_trait1), de novo mutation counts for the second trait (dn_trait2), and 3 gene-level annotations (Anno1-Anno3).
+The toy data has 5 columns: Gene, mutability of a gene (mut_dn), 
+de novo mutation counts for the first trait (dn_trait1), d
+e novo mutation counts for the second trait (dn_trait2), and 3 gene-level annotations (Anno1-Anno3).
 
 2. Single-trait without annotation analysis
 ```{r}
