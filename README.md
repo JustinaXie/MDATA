@@ -14,4 +14,4 @@ Then, you can install *M-DATA*
 install_github("JustinaXie/MDATA")
 ```
 
-For detailed introduction and tutorial, please see M-DATA's vignette.
+For detailed introduction and tutorial, please see M-DATA's vignette - User's Guide.
