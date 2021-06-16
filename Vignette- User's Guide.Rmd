@@ -15,8 +15,12 @@ load("./data/Multi_Toy_Data.rda")
 ```
 
 The toy data has 5 columns: Gene, mutability of a gene (mut_dn), 
-de novo mutation counts for the first trait (dn_trait1), d
-e novo mutation counts for the second trait (dn_trait2), and 3 gene-level annotations (Anno1-Anno3).
+de novo mutation counts for the first trait (dn_trait1), 
+de novo mutation counts for the second trait (dn_trait2), 
+and 3 gene-level annotations (Anno1-Anno3).
+
+For real data multi-trait analysis, please prepare a de novo mutation data containing Gene,mut_dn,dn_trait1,dn_trait2,
+and two annotation dataframe Anno1, Anno2 containg gene-level annotations for two traits respectively.
 
 2. Single-trait without annotation analysis
 ```{r}
