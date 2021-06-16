@@ -14,4 +14,6 @@ Then, you can install *M-DATA*
 install_github("JustinaXie/MDATA")
 ```
 
-For detailed introduction and tutorial, please see M-DATA's vignette - User's Guide.
+For software tutorial, please see M-DATA's vignette - User's Guide.
+For detailed introduction, please refer to https://www.medrxiv.org/content/10.1101/2021.05.22.21257421v1
+
