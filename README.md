@@ -1,5 +1,5 @@
 ## M-DATA: Multi-trait for De novo mutation Association Test with Annotations
-*Yuhan Xie*
+*Yuhan Xie, Mo Li, Weilai Dong, Wei Jiang, Hongyu Zhao*
 
 To install the software for *M-DATA*, you need package *devtools* first
 
