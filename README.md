@@ -17,7 +17,7 @@ install_github("JustinaXie/MDATA")
 For software tutorial, please see https://github.com/JustinaXie/MDATA/blob/main/Vignette-%20User's%20Guide.Rmd
 
 
-For detailed introduction, please refer to https://www.medrxiv.org/content/10.1101/2021.05.22.21257421v2
+For detailed introduction, please refer to https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009849
 
 ## Credits
 Those who use M-DATA should cite [M-DATA: A Statistical Approach to Jointly Analyzing De Novo Mutations for Multiple Traits](https://www.medrxiv.org/content/10.1101/2021.05.22.21257421v2.full)
