@@ -20,4 +20,4 @@ For software tutorial, please see https://github.com/JustinaXie/MDATA/blob/main/
 For detailed introduction, please refer to https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009849
 
 ## Credits
-Those who use M-DATA should cite [M-DATA: A Statistical Approach to Jointly Analyzing De Novo Mutations for Multiple Traits](https://www.medrxiv.org/content/10.1101/2021.05.22.21257421v2.full)
+Those who use M-DATA should cite [M-DATA: A Statistical Approach to Jointly Analyzing De Novo Mutations for Multiple Traits](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009849)
