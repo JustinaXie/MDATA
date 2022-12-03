@@ -17,6 +17,7 @@ Get_Single_Gene<-function(output,threshold=0.05){
   lfdr_order$FDR<-cumsum(lfdr_order$Z)/(1:P)
   tmp<-lfdr_order[order(lfdr_order$index,decreasing = FALSE),]
   tmp_FDR<-tmp$FDR
-  return(dnm$Gene[which(tmp_FDR<0.05)])
+  result$FDR<-tmp_FDR
+  return(list(Gene=result$Gene[which(tmp_FDR<0.05)],Output=result))
 }
 

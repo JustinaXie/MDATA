@@ -1,0 +1,59 @@
+---
+title: "User's Guide"
+author: "Yuhan Xie"
+date: "6/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Load the de novo mutation data
+```{r}
+load("./data/Multi_Toy_Data.rda")
+```
+
+The toy data has 5 columns: Gene, mutability of a gene (mut_dn), de novo mutation counts for the first trait (dn_trait1), de novo mutation counts for the second trait (dn_trait2), and 3 gene-level annotations (Anno1-Anno3).
+
+2. Single-trait without annotation analysis
+```{r}
+#Input the data as dnm
+dnm<-Multi_Toy_Data
+Single_Analysis<-Single_No(dnm,"dn_trait1",N_1=5000)
+#Get candidate genes based on FDR threshold 0.05
+Get_Single_Gene(Single_Analysis)$Gene
+```
+
+3. Single-trait with annotation analysis
+```{r}
+#Input the data as dnm, and annotation data as Anno
+dnm<-Multi_Toy_Data
+Anno<-cbind(dnm$Anno1,dnm$Anno2)
+#Here, we recommend to use the estimated beta0 from step 2 as the input here
+Single_Analysis<-Single_Anno(dnm,"dn_trait1",N_1=5000,Anno,beta0_init = 3)
+#Get candidate genes based on FDR threshold 0.05
+Get_Single_Gene(Single_Analysis)$Gene
+```
+
+4. Multi-trait without annotation analysis
+```{r}
+#Input the data as dnm, and annotation data as Anno
+dnm<-Multi_Toy_Data
+Multi_Analysis<-Multi_No(dnm,N_1=5000,N_2=5000)
+#Get candidate genes based on FDR threshold 0.05 for trait1
+Get_Multi_Gene(Multi_Analysis)$Gene_trait1
+#Get candidate genes based on FDR threshold 0.05 for trait2
+Get_Multi_Gene(Multi_Analysis)$Gene_trait2
+```
+
+```{r}
+#Input the data as dnm, and annotation data as Anno
+dnm<-Multi_Toy_Data
+Multi_Analysis<-Multi_Anno(dnm,Anno,Anno,N_1=5000,N_2=5000,beta0_trait1_init = 3,beta0_trait2_init = 2)
+#Get candidate genes based on FDR threshold 0.05 for trait1
+Get_Multi_Gene(Multi_Analysis)$Gene_trait1
+
+#Get candidate genes based on FDR threshold 0.05 for trait2
+Get_Multi_Gene(Multi_Analysis)$Gene_trait2
+```

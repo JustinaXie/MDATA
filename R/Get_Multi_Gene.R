@@ -25,6 +25,7 @@ Get_Multi_Gene<-function(output,threshold=0.05){
   tmp_FDR_trait2<-tmp_trait2$FDR_trait2
   Gene_trait2=result$Gene[which(tmp_FDR_trait2<threshold)]
 
-  return(list(Gene_trait1=Gene_trait1,Gene_trait2=Gene_trait2))
+  return(list(Gene_trait1=Gene_trait1,Gene_trait2=Gene_trait2,
+              Output=result))
 }
 
