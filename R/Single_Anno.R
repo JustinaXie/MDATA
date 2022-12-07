@@ -5,6 +5,7 @@
 #' @param Anno Annotation file for the trait
 #' @param N_1 Cohort size for the trait
 #' @param pi_init Initial value for risk gene proportion. Default=0.1
+#' @param beta0_init Initial value for baseline log relative risk gamma.
 #' @param threshold_1 Threshold for EM algorithm. Default=1e-3
 #' @param threshold_2 Threshold for Newton's method. Default=1e-3
 #' @param max_iter Maximum iteration for Newton's method. Default=200

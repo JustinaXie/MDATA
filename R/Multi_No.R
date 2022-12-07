@@ -5,19 +5,21 @@
 #' @param N_2 Cohort size for trait 2
 #' @param pi_init Initial value for probabilities of genes under different assumptions. Default=c(0.85,0.05,0.05,0.05)
 #' @param threshold Threshold for EM algorithm. Default=1e-6
+#' @param maxiter Maximum number of iterations. Default=5e4
 #' @return The estimated model parameters and the posterior probabilities of genes under different assumptions
 #' \item{result}{A dataframe that includes estimated posterior probabilities of risk genes for each trait and estimated posterior probability for shared risk gene}
 #' \item{pi}{Estimated proportion of genes under different assumptions}
 #' \item{beta_trait1}{Estimated log of gamma for trait 1}
 #' \item{beta_trait2}{Estimated log of gamma for trait 2}
 #' \item{Z_mat}{Estimated posterior probabilities of genes under different assumptions}
+#' \item{loglik}{Estimated log-likelihood}
 #' @import stats
 #' @export
 #'
 
 Multi_No<-function(data,N_1,N_2,
                    pi_init=c(0.85,0.05,0.05,0.05),
-                   threshold=1e-6){
+                   threshold=1e-6,maxiter=5e4){
   dnm<-data
 
   #number of gene
@@ -73,8 +75,14 @@ Multi_No<-function(data,N_1,N_2,
     beta0_2_new <- log(sum((Z[,3]+Z[,4]) * Y_2) / sum((Z[,3]+Z[,4]) * 2*N_2*mu))
 
     k <- k + 1
+
+    if(k>maxiter) {
+      print(paste0("Over ",maxiter," iterations"))
+      return(0)
+    }
   }
   print("Complete!")
+  loglik<-sum(log(prob_weighted ^ Z))
   result<-data.frame(Gene=dnm$Gene,
                      dn_trait1=Y_1,
                      dn_trait2=Y_2,
@@ -82,5 +90,5 @@ Multi_No<-function(data,N_1,N_2,
                      Z_trait1=Z[,2]+Z[,4],
                      Z_trait2=Z[,3]+Z[,4],
                      Z_both=Z[,4])
-  return(list(result=result,pi=pi,beta_trait1=beta0_1,beta_trait2=beta0_2,Z_mat=Z))
+  return(list(result=result,pi=pi,beta_trait1=beta0_1,beta_trait2=beta0_2,Z_mat=Z,loglik=loglik))
 }

@@ -17,6 +17,7 @@
 #' \item{beta_trait1}{Estimated beta vector for trait 1}
 #' \item{beta_trait2}{Estimated beta vector for trait 2}
 #' \item{Z_mat}{Estimated posterior probabilities of genes under different assumptions}
+#' \item{loglik}{Estimated log-likelihood}
 #' @import stats
 #' @export
 #'
@@ -113,6 +114,7 @@ Multi_Anno<-function(data,Anno1,Anno2,N_1,N_2,
     k <- k + 1
   }
   print("Complete!")
+  loglik<-sum(log(prob_weighted ^ Z))
   result<-data.frame(Gene=dnm$Gene,
                      dn_trait1=Y_1,
                      dn_trait2=Y_2,
@@ -120,5 +122,5 @@ Multi_Anno<-function(data,Anno1,Anno2,N_1,N_2,
                      Z_trait1=Z[,2]+Z[,4],
                      Z_trait2=Z[,3]+Z[,4],
                      Z_both=Z[,4])
-  return(list(result=result,pi=pi,beta_trait1=beta_1,beta_trait2=beta_2,Z_mat=Z))
+  return(list(result=result,pi=pi,beta_trait1=beta_1,beta_trait2=beta_2,Z_mat=Z,loglik=loglik))
 }

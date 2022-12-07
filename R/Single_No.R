@@ -5,6 +5,7 @@
 #' @param N_1 Cohort size for the trait
 #' @param pi_init Initial value for risk gene proportion. Default=0.1
 #' @param threshold Threshold for EM algorithm. Default=1e-6
+#' @param maxiter Maximum number of iterations. Default=5e4
 #' @return The estimated model parameters and the posterior probabilities of genes under different assumptions
 #' \item{result}{A dataframe that includes estimated posterior probabilities of risk genes for each trait and estimated posterior probability for shared risk gene}
 #' \item{pi}{Estimated proportion vector, the second value represents risk gene proportion}
@@ -15,7 +16,8 @@
 #'
 Single_No<-function(data,dn_col,N_1,
                     pi_init=0.1,
-                    threshold=1e-6){
+                    threshold=1e-6,
+                    maxiter=50000){
   dnm<-data
 
   #number of gene
@@ -62,6 +64,10 @@ Single_No<-function(data,dn_col,N_1,
     beta_0_new <- log(sum(Z[,2] * Y_1) / sum(Z[,2] * 2*N_1*mu))
 
     k <- k + 1
+    if(k>maxiter) {
+      print(paste0("Over ",maxiter," iterations"))
+      return(0)
+    }
   }
   print("Complete!")
   result<-data.frame(Gene=dnm$Gene,
